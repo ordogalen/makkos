@@ -1,1 +1,48 @@
-<h1>Hi</h1>
+<html>
+
+<head>
+<title>Makra generátor</title>
+<script src="http://davidbau.com/encode/seedrandom.js"></script>
+</head>
+
+<!--
+    TF U LOOKIN AT?!
+-->
+
+<body stlye="display:flex; justify-content: center; align-items:center;">
+        <div style="display:flex; justify-content: center; align-items: center; height: 100%; font-size: 1.5em;">
+            <h1 id="xdd"></h1>
+        </div>
+     
+<script>
+    function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    Math.seedrandom(date)
+
+    const xdd = "marancos makadám makaber makett makákó maramé maki makedón miki makimajom makroszkópikus makula makákus makkaroni makett makkintos makkos makréla makro makarón makákus mákos maganat"
+    const makrak = xdd.split(" ")
+
+    var arr = [];
+    while(arr.length < 6){
+        var r = Math.floor(Math.random() * makrak.length) + 1;
+        if(arr.includes(makrak[r])){
+            continue
+        }
+        if(arr.indexOf(r) === -1) arr.push(makrak[r]);
+    }
+
+    makkosok = ""
+    arr.forEach((makra) => {
+        makkosok = makkosok.concat(" ", capitalizeFirstLetter(makra))
+    })
+    makkosok = makkosok.concat(" ", "Makra")
+    document.getElementById('xdd').innerHTML = makkosok
+
+
+</script>
+</body>
+</html>
