@@ -25,12 +25,12 @@
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     Math.seedrandom(date)
 
-    const xdd = "marancos makadám makaber makett makákó maramé maki makedón miki makimajom makroszkópikus makula makákus makkaroni makett makkintos makkos makréla makro makarón makákus mákos maganat"
+    const xdd = "makkanat makkintos makító makkantyú marancos makadám makaber makett makákó maramé maki makedón miki makimajom makroszkópikus makula makákus makkaroni makett makkos makréla makro makarón makákus mákos maganat"
     const makrak = xdd.split(" ")
 
     var arr = [];
     while(arr.length < 6){
-        var r = Math.floor(Math.random() * makrak.length) + 1;
+        var r = Math.floor(Math.random() * makrak.length);
         if(arr.includes(makrak[r])){
             continue
         }
