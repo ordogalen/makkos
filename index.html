@@ -12,10 +12,14 @@
 -->
 
 <body stlye="display:flex; justify-content: center; align-items:center;">
-        <div style="display:flex; justify-content: center; align-items: center; height: 100%; font-size: 1.5em;">
+        <div style="display:flex; justify-content: center; align-items: center; height: 30%; font-size: 1.5em;">
             <h1 id="xdd"></h1>
         </div>
-     
+        <div style="display:flex; justify-content: center; align-items: center; height: 10%; font-size: 1.5em;">
+            <h1>Záróvizsga visszaszámláló:</h1>
+            <h1 id="xdd2"></h1>
+            
+        </div>
 <script>
     function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -44,6 +48,21 @@
     makkosok = makkosok.concat(" ", "makra")
     document.getElementById('xdd').innerHTML = makkosok
 
+
+    const ZVTIME = new Date('2022-06-08T11:30:00')
+
+    function setCountDown(){
+        var curr = new Date()
+        var timeDiff = Math.abs(ZVTIME - curr) 
+        hours = Math.floor(timeDiff / 36e5 )
+        timeDiff = timeDiff % 36e5
+        minutes = Math.floor(timeDiff / 60000 )
+        timeDiff = timeDiff % 60000
+        seconds = Math.floor(timeDiff / 1000 )
+        document.getElementById('xdd2').innerHTML = `${hours}:${minutes}:${seconds}`
+    }
+    setCountDown()
+    var xDInterval = setInterval(setCountDown, 1000)
 
 </script>
 </body>
